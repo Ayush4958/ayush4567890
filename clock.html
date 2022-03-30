@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        #con{
+            display: block;
+            border: 7px solid black;
+            border-radius: 15px;
+            background-color: beige;
+        }
+        #btn{
+            padding: 4px 7px;
+            font-size: 1.3rem;
+            background-color: rgb(255, 255, 227);
+            color: black;
+        }
+
+        #time{
+            font-weight: bolder;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        #con h1{
+            font-size: 1.3rem;
+        }
+
+        h2{
+            font-size: 2rem;
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        The Time Clock made by using javascript(js)
+    </h2>
+    <div id="con">
+        <h1>The time is</h1> <Span id="time"></Span>
+        <button id="btn" onclick="onoff()">On/Off Clock</button>
+    </div>
+    <script>
+
+// making clock usinf javascript
+
+        function newTime(){
+    time = new Date;
+    console.log(time);
+    document.getElementById("time").innerHTML = time;
+}
+let tim = setInterval(newTime , 1000);
+console.log(tim);
+
+function onoff(){
+    let time = document.getElementById('time');
+    let btn = document.getElementById('btn');
+    if(time.style.display !="none"){
+        time.style.display = "none";
+    }
+    else if(time.style.display = "block"){
+        clearInterval(time)
+    }
+    else{
+        time.style.display = "block";
+    }
+}
+    </script>
+</body>
+</html>
